@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <title>My first Page.</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript">
+     var settings = {
+            "async": true,
+            "crossDomain": true,
+            "url": "https://oauth.wildapricot.org/auth/token",
+            "method": "POST",
+            "headers": {
+                "authorization": "Basic eW5pY2o3eDR4cTp4cWo0emowcWYzYXJ1d203ejlqMmtlbGxieWc0MG0=",
+                "content-type": "application/x-www-form-urlencoded",
+                "cache-control": "no-cache",
+                "postman-token": "74909c41-09cf-a4c4-4a4c-e377f9586951"
+            },
+            "data": ""
+        }
+        debugger;
+
+        $.ajax({
+            type: 'POST',
+            url: 'https://oauth.wildapricot.org/auth/token',
+            data: "grant_type=password&username=imranqau5373@gmail.com&password=imrankhan&scope=auto",
+            dataType: "text",
+            contentType: 'application/x-www-form-urlencoded; charset=utf-8',
+            xhrFields: {
+                withCredentials: true
+            },
+            //crossDomain: true,
+            headers: {
+                'Authorization': "Basic " + window.btoa(settings.clientId + ':' + settings.clientSecret),
+                "Content-Type": "application/json",
+                "Access-Control-Allow-Origin": "*"
+            },
+            //beforeSend: function (xhr) {
+            //},
+            success: function (result) {
+                var token = result;
+            },
+            //complete: function (jqXHR, textStatus) {
+            //},
+            error: function (req, status, error) {
+                debugger;
+                alert(error);
+            }
+        });
+    </script>
+    </head>
+    <body>
+        <h2>First Page is working.</h2>
+    </body>
+</html>
